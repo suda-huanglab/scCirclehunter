@@ -46,4 +46,4 @@ cirlcehunter2 output an extended BED format file with columns:
 
 ## Downstream analysis - Assigning ecDNA to Cell Populations
 
-Refer to the example in demo/scCirclehunter_downstream_demo.html for assigning ecDNA to cell populations. The functions utilized are available in the scripts/ directory.
+Refer to the example in **demo/scCirclehunter_downstream_demo.html** for assigning ecDNA to cell populations. The functions utilized are available in the **scripts/** directory.
