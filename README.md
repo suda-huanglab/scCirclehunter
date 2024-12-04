@@ -1,5 +1,5 @@
 # scCirclehunter
-![scCirclehunter overview](https://github.com/Maple-sakura/scCirclehunter/raw/main/img/F1.tif)
+![scCirclehunter overview](https://github.com/Maple-sakura/scCirclehunter/raw/main/img/F1.png)
 ## Step1 - Identification of ecDNA from scATAC-seq based on a pseudo-bulk algorithm (circlehunter2)
 
 ### Installation
@@ -45,5 +45,5 @@ cirlcehunter2 output an extended BED format file with columns:
 [cutoff]: `cutoff` is a user input params `-c` or determine by circlehunter2 automatically if not set by user, which is default to the inverse survival of poisson distribution use mean of the whole genome depth as $\lambda$. `cutoff` will be log in the stderr.
 
 ## Step2 - Assigning ecDNA to Cell Populations
-Refer to the example in **demo/scCirclehunter_downstream_demo.html** for assigning ecDNA to cell populations. The functions utilized are available in the **scripts/** directory.
+Refer to the example in **[demo/scCirclehunter_downstream_demo.html](https://github.com/Maple-sakura/scCirclehunter/blob/main/demo/scCirclehunter_downstream_demo.html)** for assigning ecDNA to cell populations. The functions utilized are available in the **[scripts](https://github.com/Maple-sakura/scCirclehunter/blob/main/scripts)** directory.
 
