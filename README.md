@@ -42,7 +42,7 @@ cirlcehunter2 output an extended BED format file with columns:
 14. `depth_mean`: mean of depth of this region, maybe false positive if this is smaller than `cutoff`[^cutoff]
 15. `high_coverage`: fraction of region that depth is higher than `cutoff`, maybe false positive if this is pretty small
 
-[^cutoff]: `cutoff` is a user input params `-c` or determine by circlehunter2 automatically if not set by user, which is default to the inverse survival of poisson distribution use mean of the whole genome depth as $\lambda$. `cutoff` will be log in the stderr.
+[cutoff]: `cutoff` is a user input params `-c` or determine by circlehunter2 automatically if not set by user, which is default to the inverse survival of poisson distribution use mean of the whole genome depth as $\lambda$. `cutoff` will be log in the stderr.
 
 ## Downstream analysis - Assigning ecDNA to Cell Populations
 
