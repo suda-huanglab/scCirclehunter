@@ -1,5 +1,5 @@
 # scCirclehunter
-![scCirclehunter overview](https://github.com/Maple-sakura/scCirclehunter/raw/main/img/F1.tif)
+![scCirclehunter overview](https://github.com/Maple-sakura/scCirclehunter/raw/main/img/F1.png)
 ## Step1 - Identification of ecDNA from scATAC-seq based on a pseudo-bulk algorithm (circlehunter2)
 
 ### Installation
