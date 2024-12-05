@@ -5,15 +5,18 @@
 ### Installation
 
 ```bash
-micromamba install -f requirements.txt
-micromamba install -f requirements-dev.txt
+micromamba create -f scCirclehunter.yaml
+micromamba activate scCirclehunter
 python setup.py install
 ```
 
 ### Usage
 
+Circlehunter2 can also be used for bulk ATAC-seq if the `-b` option is not specified. If the `-b CB` option is provided, read counts for each ecDNA segment will be output and saved in an `.h5ad` file. Since similar operations are performed in the downstream analysis of **Step 2**, we recommend running the following command directly for both bulk and single-cell ATAC-seq.
+The result of the following command can be found in **[GBM4349_circlehunter2_ecDNA.bed](https://github.com/Maple-sakura/scCirclehunter/blob/main/demo/GBM4349_circlehunter2_ecDNA.bed)**.
+
 ```bash
-circlehunter2 -p 16 --blacklist /share/references/hg38/blacklist/hg38.blacklist.sorted.bed /mnt/2w/data2/andy/scATAC-Seq/rawdata/cellranger/GBM4349/outs/possorted_bam.bam /home/andy/Projects/circlehunter2/workspace/dev/data/test.bed
+circlehunter2 -p 16 --blacklist /share/references/hg38/blacklist/hg38.blacklist.sorted.bed /mnt/2w/data2/andy/scATAC-Seq/rawdata/cellranger/GBM4349/outs/possorted_bam.bam /home/andy/Projects/circlehunter2/workspace/dev/data/GBM4349_circlehunter2_ecDNA.bed
 ```
 
 input BAM file have to be coordinate sorted, index of the BAM file should present with a `.bai` suffix, more options please check

@@ -198,23 +198,23 @@ def run(bam_file, output,
 
     logger.info(f"Result saved to: {os.path.abspath(output)}")
 
-    # if (barcode_tag is not None) and (len(ecDNAs)>0) :
-    #     logger.info(f"Counting reads for each barcode ...")
-    #     ecDNAs_file = os.path.abspath(output)
-    #     ecDNA = pd.read_table(ecDNAs_file, names=header, comment="#")
-    #     matrix = csr_matrix([
-    #         tag_collection.count(row["chrom"], row["start"], row["end"])
-    #         for _, row in ecDNA.iterrows()
-    #     ])
-    #     adata = ad.AnnData(matrix.T, dtype=matrix.dtype)
-    #     adata.obs.index = tag_collection.get_barcodes()
-    #     adata.obs.index.name = "barcode"
-    #     adata.var = ecDNA
-    #     adata.var_names = ecDNA["name"]
+    if (barcode_tag is not None) and (len(ecDNAs)>0) :
+        logger.info(f"Counting reads for each barcode ...")
+        ecDNAs_file = os.path.abspath(output)
+        ecDNA = pd.read_table(ecDNAs_file, names=header, comment="#")
+        matrix = csr_matrix([
+            tag_collection.count(row["chrom"], row["start"], row["end"])
+            for _, row in ecDNA.iterrows()
+        ])
+        adata = ad.AnnData(matrix.T, dtype=matrix.dtype)
+        adata.obs.index = tag_collection.get_barcodes()
+        adata.obs.index.name = "barcode"
+        adata.var = ecDNA
+        adata.var_names = ecDNA["name"]
 
-    #     adata_file = os.path.splitext(ecDNAs_file)[0] + ".h5ad"
-    #     adata.write(adata_file)
-    #     logger.info(f"Read counts saved to: {adata_file}")
+        adata_file = os.path.splitext(ecDNAs_file)[0] + ".h5ad"
+        adata.write(adata_file)
+        logger.info(f"Read counts saved to: {adata_file}")
 
     logger.info(f"Finished")
 
