@@ -1,5 +1,5 @@
 # scCirclehunter
-![scCirclehunter overview](https://github.com/Maple-sakura/scCirclehunter/raw/main/img/F1.png)
+![scCirclehunter overview](https://github.com/suda-huanglab/scCirclehunter/raw/main/img/F1.png)
 ## Step1 - Identification of ecDNA from scATAC-seq based on a pseudo-bulk algorithm (circlehunter2)
 
 ### Installation
@@ -13,7 +13,7 @@ python setup.py install
 ### Usage
 
 Circlehunter2 can also be used for bulk ATAC-seq if the `-b` option is not specified. If the `-b CB` option is provided, read counts for each ecDNA segment will be output and saved in an `.h5ad` file. Since similar operations are performed in the downstream analysis of **Step 2**, we recommend running the following command directly for both bulk and single-cell ATAC-seq.
-The result of the following command can be found in **[GBM4349_circlehunter2_ecDNA.bed](https://github.com/Maple-sakura/scCirclehunter/blob/main/demo/GBM4349_circlehunter2_ecDNA.bed)**.
+The result of the following command can be found in **[GBM4349_circlehunter2_ecDNA.bed](https://github.com/suda-huanglab/scCirclehunter/blob/main/demo/GBM4349_circlehunter2_ecDNA.bed)**.
 
 ```bash
 circlehunter2 -p 16 --blacklist /share/references/hg38/blacklist/hg38.blacklist.sorted.bed /mnt/2w/data2/andy/scATAC-Seq/rawdata/cellranger/GBM4349/outs/possorted_bam.bam /home/andy/Projects/circlehunter2/workspace/dev/data/GBM4349_circlehunter2_ecDNA.bed
@@ -48,5 +48,5 @@ cirlcehunter2 output an extended BED format file with columns:
 [cutoff]: `cutoff` is a user input params `-c` or determine by circlehunter2 automatically if not set by user, which is default to the inverse survival of poisson distribution use mean of the whole genome depth as $\lambda$. `cutoff` will be log in the stderr.
 
 ## Step2 - Assigning ecDNA to Cell Populations
-Refer to the example in **[demo/scCirclehunter_downstream_demo.html](https://github.com/Maple-sakura/scCirclehunter/blob/main/demo/scCirclehunter_downstream_demo.html)** for assigning ecDNA to cell populations. The functions utilized are available in the **[scripts](https://github.com/Maple-sakura/scCirclehunter/blob/main/scripts)** directory.
+Refer to the example in **[demo/scCirclehunter_downstream_demo.html](https://github.com/suda-huanglab/scCirclehunter/blob/main/demo/scCirclehunter_downstream_demo.html)** for assigning ecDNA to cell populations. The functions utilized are available in the **[scripts](https://github.com/suda-huanglab/scCirclehunter/blob/main/scripts)** directory.
 
