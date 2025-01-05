@@ -61,6 +61,7 @@ anno_circlehunter2 <- function(ecDNA_bed_set = "") {
                 colnames(ecDNA_bed) <- c("chrom","start","end","name","score","strand","start_ci","end_ci","start_peak","end_peak","start_cross","end_cross","linked_reads","depth_mean","high_coverage")
             }else if (ncol(ecDNA_bed)==16){
                 colnames(ecDNA_bed) <- c("chrom","start","end","name","score","strand","start_ci","end_ci","start_peak","end_peak","start_cross","end_cross","linked_reads","depth_mean","high_coverage","width")
+                ecDNA_bed <- ecDNA_bed %>% dplyr::select(-width)
             }
             ecDNA_bed$sample <- str_split(ecDNA_bed_set[i], pattern = "/", simplify = T)[,
                 str_count(ecDNA_bed_set[i], pattern = "/") + 1]
